@@ -8,12 +8,14 @@
 - When your Unturned server changes its IP address, clients who have bookmarked your server(s) in-game will still be able to connect to it.
 - The listener can be configured to work with multiple Unturned servers.
 - **Important**: Be sure to install a BookmarkHost plugin on your server, to update this web listener. A reference implementation can be found in this project's [root](https://github.com/PandahutMushy/BookmarkHostPlugin/tree/master) folder.
+<br/>
 
 ## Setup
 - This web listener must be hosted on a **NodeJS** web server.
 - To run locally, you must have NodeJS installed. Browse to its extracted folder and run the command `node index.js`.
 - The server runs on Port 3000 by default. You can change this by altering the `ListenerPORT` line in the `index.js` file.
 - On first use, update the web listener's configuration file `ServerCfg.json` to include a short name and the GSLT (Steam Login Token) for your server(s). Before saving, you might wish to run the contents of this file for proper Json formatting. A free, online Json validator can be found here: https://jsonlint.com/. 
+<br/>
 
 ## Usage
 - Each server's root property is defined by its short/friendly name. For example, `server1`. Child properties include the server's Steam Login Token (`GSLT`) and connection string (`ConnString`).
@@ -23,6 +25,7 @@
 - Once successfully tested, enter the above URL in the `BookmarkHost` property of your Unturned server's `Config.json` file. For example, `BookmarkHost" = "http://mydomain.com/?server=server1`.
 - You Unturned server(s) will use the above URL to update the web listener with its connection information every time the the server restarts or the plugin is loaded
 - The Unturned Bookmarks list will query the above URL every time a player bookmarks your server or joins it using its bookmark.
+<br/>
 
 ## Disclaimers
 - This project is purely instructional. It was designed to meet minimum operational requirements.
