@@ -7,7 +7,7 @@
 
 ## Setup:
 - Add the BookmarkHost plugin's DLL file in your server's "Rocket\Plugins" directory.
-- Set up your Bookmark Host. A reference implementation is available here:
+- Set up your Bookmark Host. A reference implementation is available in the [/Listener](https://github.com/PandahutMushy/BookmarkHostPlugin/tree/master/Listener) folder located in the project's root directory. 
 - Enable the "Use_FakeIP" setting in your Unturned server's Config.json file.
 - Enter your web listener's URL in the "BookmarkHost" property of your Unturned server's Config.json file.
 - Enter your server's Steam Login Token (GSLT) in the "Login_Token" property of your Unturned server's Config.json file.

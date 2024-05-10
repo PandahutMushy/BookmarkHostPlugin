@@ -8,7 +8,7 @@
 - The listener supports multiple servers by the same owner.
 
 ## Setup:
-- **Important**: Be sure to install a BookmarkHost plugin on your server, to update this web listener. A reference implementation can be found here: https://github.com/PandahutMushy/BookmarkHostPlugin
+- **Important**: Be sure to install a BookmarkHost plugin on your server, to update this web listener. A reference implementation can be found in this project's [root](https://github.com/PandahutMushy/BookmarkHostPlugin/tree/master) folder.
 - This web listener must be hosted on a **PHP** web server.
 - On first use, update the web listener's configuration file "ServerCfg.json" to include a short name and the GSLT (Steam Login Token) for your server(s). Before saving, you might wish to run the contents of this file for proper Json formatting. A free, online Json validator can be found here: https://jsonlint.com/. 
 - Each server's root property is defined by its short/friendly name. For example, "server1". Child properties include the server's Steam Login Token (GSLT) and connection string (ConnString).

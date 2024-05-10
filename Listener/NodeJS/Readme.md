@@ -8,7 +8,7 @@
 - The listener supports multiple servers by the same owner.
 
 ## Setup:
-- **Important**: Be sure to install a BookmarkHost plugin on your server, to update this web listener. A reference implementation can be found here: https://github.com/PandahutMushy/BookmarkHostPlugin
+- **Important**: Be sure to install a BookmarkHost plugin on your server, to update this web listener. A reference implementation can be found in this project's [root](https://github.com/PandahutMushy/BookmarkHostPlugin/tree/master) folder.
 - This web listener must be hosted on a **NodeJS** web server.
 - To run locally, you must have NodeJS installed. Browse to its extracted folder and run the command "node index.js".
 - The server runs on Port 3000 by default. You can change this by altering the "ListenerPORT" line in the "index.js" file.
