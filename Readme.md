@@ -23,7 +23,7 @@
 - Its purpose is to fetch and serve the latest connection information for your Unturned server(s).
 - This is useful for Unturned servers using Unturned's FakeIP feature.
 - When your Unturned server changes its IP address, clients who have bookmarked your server(s) in-game will still be able to connect to it.
-- The listener supports multiple servers by the same owner.
+- The listener can be configured to work with multiple Unturned servers.
 
 ## Option #1: Setup (NodeJS)
 - **Important**: Be sure to install a BookmarkHost plugin on your server, to update this web listener. A reference implementation can be found in this project's [root](https://github.com/PandahutMushy/BookmarkHostPlugin/tree/master) folder.
