@@ -14,7 +14,7 @@
 - Enable the `Use_FakeIP` setting in your Unturned server's `Config.json` file.
 - Enter your web listener's URL in the `BookmarkHost` property of your Unturned server's `Config.json` file.
 - Enter your server's Steam Login Token (GSLT) in the `Login_Token` property of your Unturned server's `Config.json` file.
-
+<br/>
 <br/>
 
 # Unturned BookmarkHost Web Listener
@@ -28,20 +28,17 @@
 - The listener can be configured to work with multiple Unturned servers.
 - **Important**: Be sure to install a BookmarkHost plugin on your server, to update this web listener. A reference implementation can be found in this project's [root](https://github.com/PandahutMushy/BookmarkHostPlugin/tree/master) folder.
 <br/>
-
 ## Option #1: Setup (NodeJS)
 - This web listener must be hosted on a **NodeJS** web server.
 - To run locally, you must have NodeJS installed. Browse to its extracted folder and run the command `node index.js`.
 - The server runs on Port 3000 by default. You can change this by altering the `ListenerPORT` line in the `index.js` file.
 - On first use, update the web listener's configuration file `ServerCfg.json` to include a short name and the GSLT (Steam Login Token) for your server(s). Before saving, you might wish to run the contents of this file for proper Json formatting. A free, online Json validator can be found here: https://jsonlint.com/. 
 <br/>
-
 ## Option #2: Setup (PHP)
 - **Important**: Be sure to install a BookmarkHost plugin on your server, to update this web listener. A reference implementation can be found in this project's [root](https://github.com/PandahutMushy/BookmarkHostPlugin/tree/master) folder.
 - This web listener must be hosted on a **PHP** web server.
 - On first use, update the web listener's configuration file `ServerCfg.json` to include a short name and the GSLT (Steam Login Token) for your server(s). Before saving, you might wish to run the contents of this file for proper Json formatting. A free, online Json validator can be found here: https://jsonlint.com/. 
 <br/>
-
 ## Usage
 - Each server's root property is defined by its short/friendly name. For example, `server1`. Child properties include the server's Steam Login Token (`GSLT`) and connection string (`ConnString`).
 - Each server's `ConnString` property will contain its `FakeIP:Port` connection string. This field is updated automatically by the BookmarkHost Plugin. For now, you can leave the default values in place.
