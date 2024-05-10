@@ -18,7 +18,7 @@
 ## Usage
 - Each server's root property is defined by its short/friendly name. For example, `server1`. Child properties include the server's Steam Login Token (`GSLT`) and connection string (`ConnString`).
 - Each server's `ConnString` property will contain its `FakeIP:Port` connection string. This field is updated automatically by the BookmarkHost Plugin. For now, you can leave the default values in place.
-- The web listener can be queried via a GET request using the "?server=" query string. Example: "http://your-domain.here/?server=<shortname>".
+- The web listener can be queried via a GET request using the "?server=" query string. Example: `http://your-domain.here/?server=<shortname>`.
 - Perform a test query to your web listener. Use your web browser to navigate to your web listener's URL and add the desired query string.
 - Once successfully tested, enter the above URL in the `BookmarkHost` property of your Unturned server's `Config.json` file. For example, `BookmarkHost" = "http://mydomain.com/?server=server1`.
 - You Unturned server(s) will use the above URL to update the web listener with its connection information every time the the server restarts or the plugin is loaded
