@@ -7,9 +7,9 @@
 - This is useful for Unturned servers using Unturned's FakeIP feature.
 - When your Unturned server changes its IP address, clients who have bookmarked your server(s) in-game will still be able to connect to it.
 - The listener can be configured to work with multiple Unturned servers.
+- **Important**: Be sure to install a BookmarkHost plugin on your server, to update this web listener. A reference implementation can be found in this project's [root](https://github.com/PandahutMushy/BookmarkHostPlugin/tree/master) folder.
 
 ## Setup
-- **Important**: Be sure to install a BookmarkHost plugin on your server, to update this web listener. A reference implementation can be found in this project's [root](https://github.com/PandahutMushy/BookmarkHostPlugin/tree/master) folder.
 - This web listener must be hosted on a **PHP** web server.
 - On first use, update the web listener's configuration file `ServerCfg.json` to include a short name and the GSLT (Steam Login Token) for your server(s). Before saving, you might wish to run the contents of this file for proper Json formatting. A free, online Json validator can be found here: https://jsonlint.com/. 
 

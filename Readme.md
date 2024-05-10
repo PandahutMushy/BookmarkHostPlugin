@@ -25,9 +25,9 @@
 - This is useful for Unturned servers using Unturned's FakeIP feature.
 - When your Unturned server changes its IP address, clients who have bookmarked your server(s) in-game will still be able to connect to it.
 - The listener can be configured to work with multiple Unturned servers.
+- **Important**: Be sure to install a BookmarkHost plugin on your server, to update this web listener. A reference implementation can be found in this project's [root](https://github.com/PandahutMushy/BookmarkHostPlugin/tree/master) folder.
 
 ## Option #1: Setup (NodeJS)
-- **Important**: Be sure to install a BookmarkHost plugin on your server, to update this web listener. A reference implementation can be found in this project's [root](https://github.com/PandahutMushy/BookmarkHostPlugin/tree/master) folder.
 - This web listener must be hosted on a **NodeJS** web server.
 - To run locally, you must have NodeJS installed. Browse to its extracted folder and run the command `node index.js`.
 - The server runs on Port 3000 by default. You can change this by altering the `ListenerPORT` line in the `index.js` file.
