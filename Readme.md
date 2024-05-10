@@ -12,9 +12,7 @@
 - Enter your web listener's URL in the "BookmarkHost" property of your Unturned server's Config.json file.
 - Enter your server's Steam Login Token (GSLT) in the "Login_Token" property of your Unturned server's Config.json file.
 
-## Disclaimer:
-- This project is purely instructional. It was designed to meet minimum operational requirements.
-- Ideally, you will modify and expand on this implementation, remodeling it to your system's functional and security requirements.
+
 
 # Unturned BookmarkHost Web Listener (NodeJS)
 
@@ -39,9 +37,7 @@
 - You Unturned server(s) will use the above URL to update the web listener with its connection information every time the the server restarts or the plugin is loaded
 - The Unturned Bookmarks list will query the above URL every time a player bookmarks your server or joins it using its bookmark.
 
-## Disclaimer:
-- This project is purely instructional. It was designed to meet minimum operational requirements.
-- Ideally, you will modify and expand on this implementation, remodeling it to your system's functional and security requirements.
+
 
 # Unturned BookmarkHost Web Listener (PHP)
 
@@ -63,6 +59,8 @@
 - Once successfully tested, enter the above URL in the "BookmarkHost" property of your Unturned server's Config.json file. For example, "BookmarkHost" = "http://mydomain.com/?server=server1".
 - You Unturned server(s) will use the above URL to update the web listener with its connection information every time the the server restarts or the plugin is loaded
 - The Unturned Bookmarks list will query the above URL every time a player bookmarks your server or joins it using its bookmark.
+
+
 
 ## Disclaimer:
 - This project is purely instructional. It was designed to meet minimum operational requirements.
