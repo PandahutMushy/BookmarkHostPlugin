@@ -1,0 +1,14 @@
+{
+  "server1": {
+    "GSLT": "A1B2C3D4E5F6G7H8I9A1B2C3D4E5F6G7H8I91",
+    "ConnString": "192.168.0.1:27015"
+  },
+  "server2": {
+    "GSLT": "A1B2C3D4E5F6G7H8I9A1B2C3D4E5F6G7H8I92",
+    "ConnString": "192.168.0.2:27015"
+  },
+  "server3": {
+    "GSLT": "A1B2C3D4E5F6G7H8I9A1B2C3D4E5F6G7H8I93",
+    "ConnString": "192.168.0.3:27015"
+  }
+}

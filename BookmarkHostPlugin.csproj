@@ -75,7 +75,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Listener\NodeJS\Readme.md" />
+    <None Include="Listener\NodeJS\ServerCfg.json" />
+    <None Include="Listener\PHP\index.php" />
+    <None Include="Listener\PHP\Readme.md" />
+    <None Include="Listener\PHP\ServerCfg.json" />
     <None Include="Readme.md" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Listener\NodeJS\index.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

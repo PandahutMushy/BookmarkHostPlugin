@@ -1,0 +1,24 @@
+Details:
+- This is a reference implementation of the Bookmark Manager web listener for servers.
+- Its purpose is to handle HTTP requests to fetch the latest connection string for your Unturned server(s).
+- This is useful for servers whose IP addresses change frequently, such as those using Unturned's FakeIP feature.
+- When your Unturned server changes its IP address, clients who have bookmarked your server(s) in-game can query the listener to grab its new connection details.
+- The listener supports multiple servers by the same owner.
+
+Usage Instructions:
+- This web listener must be hosted on a NodeJS web server.
+- To run locally, you must have NodeJS installed. Browse to its extracted folder and run the command "node index.js".
+- The server runs on Port 3000 by default. You can change this by altering the "ListenerPORT" line in the "index.js" file.
+- On first use, update the configuration file "ServerCfg.json" to include a short name and the GSLT (Steam Login Token) for your server(s). 
+The "ConnString" field is updated automatically by the Unturned server. For now, you can leave the default values in place.
+- The web listener can be queried via the "?server=" query string once set up ("http://your-domain.here/?server=<shortname>"). You can use your web browser to perform a test query.
+- Once successfully tested, enter this URL into your Unturned server's "BookmarkHost" setting in its Config.json file. For example, "BookmarkHost" = "http://mydomain.com/?server=server1".
+
+Automatically Updating the Listener:
+- Your Unturned server can automatically update the web listener with its latest connection information when its FakeIP changes.
+- In order to use this feature, you must install the BookmarkHostUpdater plugin on your server.
+- You must also enter your server's Steam Login Token (GSLT) into the "Login_Token" setting of its Config.json file.
+
+Disclaimer:
+- This source code is purely instructional. It was designed to meet minimum operational requirements.
+- Ideally, you will expand on this implementation, adequating it to your systems and security practices.

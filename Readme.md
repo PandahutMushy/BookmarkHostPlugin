@@ -1,4 +1,4 @@
-# BookmarkHostPlugin
+# Unturned BookmarkHost Server Plugin
 
 ## About
 - This is a reference implementation of the BookmarkHost Plugin for Unturned servers.
