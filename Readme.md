@@ -19,7 +19,7 @@
 # Unturned BookmarkHost Web Listener
 
 ## About
-- **Important**: Project files are located in the [/Listener](https://github.com/PandahutMushy/BookmarkHostPlugin/tree/master/Listener) folder located in this project's root directory. 
+- **Important**: Project files are located in the [/Listener](https://github.com/PandahutMushy/BookmarkHostPlugin/tree/master/Listener) folder of this project's root directory. 
 - This is a reference implementation of the BookmarkHost web listener for Unturned servers.
 - Its purpose is to fetch and serve the latest connection information for your Unturned server(s).
 - This is useful for Unturned servers using Unturned's FakeIP feature.
