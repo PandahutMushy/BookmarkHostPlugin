@@ -7,7 +7,7 @@
 - When your Unturned server changes its IP address, clients who have bookmarked your server(s) in-game will still be able to connect to it.
 
 ## Setup:
-- Add the BookmarkHost plugin's DLL file in your server's "Rocket\Plugins" directory.
+- Add the BookmarkHost plugin's DLL file to your server's "Rocket\Plugins" directory.
 - Set up the web listener for your Bookmark Host. A reference implementation is available in the [/Listener](https://github.com/PandahutMushy/BookmarkHostPlugin/tree/master/Listener) folder located in the project's root directory. 
 - Enable the "Use_FakeIP" setting in your Unturned server's Config.json file.
 - Enter your web listener's URL in the "BookmarkHost" property of your Unturned server's Config.json file.
