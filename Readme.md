@@ -2,6 +2,7 @@
 
 ## About
 - This is a reference implementation of the BookmarkHost Plugin for Unturned servers. It currently supports [Rocket](https://github.com/SmartlyDressedGames/Legally-Distinct-Missile), but you're welcome to create another implementation of it!
+- This project is free to use and open source.
 - Its purpose is to update your Bookmark Host web listener with your server's latest FakeIP connection information.
 - When your Unturned server changes its IP address, clients who have bookmarked your server(s) in-game will still be able to connect to it.
 
