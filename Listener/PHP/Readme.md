@@ -12,7 +12,8 @@
 
 ## Setup
 - This web listener must be hosted on a **PHP** web server.
-- On first use, update the web listener's configuration file `ServerCfg.json` to include a short name and the GSLT (Steam Login Token) for your server(s). Before saving, you might wish to run the contents of this file for proper Json formatting. A free, online Json validator can be found here: https://jsonlint.com/. 
+- On first use, update the web listener's configuration file `ServerCfg.json` to include a short name and the GSLT (Steam Login Token) for your server(s). 
+- Before saving, you may wish to run the contents of this file for proper Json formatting. A free, online Json validator can be found here: https://jsonlint.com/. 
 <br/>
 
 ## Usage

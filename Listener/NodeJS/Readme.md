@@ -14,7 +14,8 @@
 - This web listener must be hosted on a **NodeJS** web server.
 - To run locally, you must have NodeJS installed. Browse to its extracted folder and run the command `node index.js`.
 - The server runs on Port 3000 by default. You can change this by altering the `ListenerPORT` line in the `index.js` file.
-- On first use, update the web listener's configuration file `ServerCfg.json` to include a short name and the GSLT (Steam Login Token) for your server(s). Before saving, you might wish to run the contents of this file for proper Json formatting. A free, online Json validator can be found here: https://jsonlint.com/. 
+- On first use, update the web listener's configuration file `ServerCfg.json` to include a short name and the GSLT (Steam Login Token) for your server(s).
+- Before saving, you may wish to run the contents of this file for proper Json formatting. A free, online Json validator can be found here: https://jsonlint.com/. 
 <br/>
 
 ## Usage
