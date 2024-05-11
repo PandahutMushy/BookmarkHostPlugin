@@ -53,4 +53,4 @@
 
 ## Disclaimers
 - This project is purely instructional. It was designed to meet minimum operational requirements.
-- Ideally, you will modify and expand on this implementation, remodelling it to your system's functional and security requirements.
+- Ideally, you will modify and expand on this implementation, remodeling it to your system's functional and security requirements.
