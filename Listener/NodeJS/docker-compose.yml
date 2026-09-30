@@ -1,0 +1,12 @@
+services:
+  nodejs:
+    image: node:current-alpine
+    container_name: listener
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./listener/index.js:/usr/src/app/index.js
+      - ./listener/ServerCfg.json:/usr/src/app/ServerCfg.json:rw
+    working_dir: /usr/src/app
+    command: ["node", "index.js"]

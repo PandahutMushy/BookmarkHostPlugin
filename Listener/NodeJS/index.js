@@ -1,62 +1,85 @@
 const http = require('http');
-const fs = require('fs');
+const fs = require('fs').promises;
 const url = require('url');
 const querystring = require('querystring');
-const cfgFile = fs.readFileSync('ServerCfg.json', 'utf8');
-const cfg = JSON.parse(cfgFile);
 
 const ListenerPORT = 3000;
 
-var server = http.createServer(function(request, response) {
-	//[GET] Fetch server connection string
-	if (request.method == 'GET') {
-		var query = url.parse(request.url).query;		
-		var queryServer = querystring.parse(query).server;		
-		response.writeHead(200, { "Content-Type": "text/html" });
-		response.write(cfg[queryServer]?.ConnString || '');	
-		response.end();		
-		return;
-	}	
-	//[POST] Set server connection string
-	else if (request.method == 'POST') {
-        var body = '';		
-        request.on('data', function (data) { body += data; });		
-        request.on('end', function () {
-            try {
-				var reqData = JSON.parse(body);
-				var reqGSLT = reqData['GSLT'];
-				var reqCS = reqData['ConnString'];
-				var srvShortName = "";
+async function readConfig() {
+    try {
+        const cfgFile = await fs.readFile('ServerCfg.json', 'utf8');
+        return JSON.parse(cfgFile);
+    } catch (err) {
+        console.error("Error reading configuration:", err);
+        throw new Error("Failed to load configuration");
+    }
+}
 
-				// Only make changes if a server exists by the given GSLT
-				for (const key in cfg) {
-					if (cfg[key]['GSLT'] === reqGSLT) {
-						// Get the server name for this GSLT
-						srvShortName = key;
-						// Remove entry with the same GSLT
-						delete cfg[key];
-						// We don't want to break here; remove duplicate GSLTs
-					}
-				}
-				
-				if (typeof srvShortName === 'undefined')  return;
-				
-				cfg[srvShortName] = {GSLT : reqGSLT, ConnString : reqCS};
-				const encodedJsonData = JSON.stringify(cfg, null, 2);
-				fs.writeFileSync('ServerCfg.json', encodedJsonData, 'utf8');
-				response.writeHead(200, {"Content-Type": "text/plain"});
-				response.write(encodedJsonData ? 'OK' : '');	
-				response.end();
-				return;
-            }
-			catch (err) {
-              response.writeHead(500, {"Content-Type": "text/plain"});
-              response.write("Bad Post Data. Please ensure your data is proper JSON.\n");
-              response.end();
-              return;
+async function writeConfig(cfg) {
+    try {
+        await fs.writeFile('ServerCfg.json', JSON.stringify(cfg, null, 2), 'utf8');
+    } catch (err) {
+        console.error("Error writing configuration:", err);
+        throw new Error("Failed to save configuration");
+    }
+}
+
+const server = http.createServer(async (request, response) => {
+    let cfg;
+
+    try {
+        cfg = await readConfig();
+    } catch (error) {
+        response.writeHead(500, { "Content-Type": "text/plain" });
+        response.end(error.message);
+        return;
+    }
+
+    if (request.method === 'GET') {
+        const query = url.parse(request.url).query;
+        const queryServer = querystring.parse(query).server;
+        const connString = cfg[queryServer]?.ConnString || '';
+        
+        response.writeHead(200, { "Content-Type": "text/html" });
+        response.end(connString);
+        
+    } else if (request.method === 'POST') {
+        let body = '';
+
+        request.on('data', chunk => body += chunk);
+        
+        request.on('end', async () => {
+            try {
+                const reqData = JSON.parse(body);
+                const { GSLT: reqGSLT, ConnString: reqCS } = reqData;
+                let srvShortName;
+
+                for (const key in cfg) {
+                    if (cfg[key].GSLT === reqGSLT) {
+                        srvShortName = key;
+                        delete cfg[key];
+                        break;
+                    }
+                }
+
+                if (!srvShortName) return response.end('Server not found');
+
+                cfg[srvShortName] = { GSLT: reqGSLT, ConnString: reqCS };
+                await writeConfig(cfg);
+
+                response.writeHead(200, { "Content-Type": "text/plain" });
+                response.end('OK');
+            } catch (err) {
+                response.writeHead(400, { "Content-Type": "text/plain" });
+                response.end("Invalid data. Please ensure the data is in JSON format.");
             }
         });
+    } else {
+        response.writeHead(405, { "Content-Type": "text/plain" });
+        response.end("Method not allowed");
     }
 });
-server.listen(ListenerPORT);
-console.log("Unturned BookmarkHost server started!")
+
+server.listen(ListenerPORT, () => {
+    console.log("BookmarkHost server started on port", ListenerPORT);
+});
